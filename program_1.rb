@@ -24,3 +24,4 @@ end
 
 s=Sum.new
 s.cal_sum
+
