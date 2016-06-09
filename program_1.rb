@@ -1,14 +1,26 @@
-while 1
-	print('Enter Any Number(>0) : ')
-	number=gets().to_i
-	if(number<=0)
-		puts("!!!!Invalid Number!!!!")
-		redo
+
+
+class Sum
+	def take_input()
+    while(1) 
+      print('Enter Any Number(>0) : ')
+			@number=gets().to_i
+			if(@number<=0)
+				puts("!!!!Invalid Number!!!!")
+				redo
+			end
+			break
+		end
 	end
-	break
+  def cal_sum()
+  	sum=0
+		for i in 1..@number
+				sum+=i
+		end
+		puts("Sum of numbers from 1 to #{@number} is #{sum} ") 
+	end
 end
-sum=0
-for i in 1..number
-	sum+=i
-end
-puts("Sum of numbers from 1 to #{number} is #{sum} ")
+
+s=Sum.new
+s.take_input
+s.cal_sum
