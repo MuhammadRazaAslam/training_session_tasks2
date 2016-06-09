@@ -1,5 +1,5 @@
-
-
+=begin Write a program that asks the user for a number n and prints the sum of the numbers 1 to n
+=end
 class Sum
 	def take_input()
     while(1) 
