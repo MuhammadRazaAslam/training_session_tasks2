@@ -1,4 +1,3 @@
-
 =begin
   Write a guessing game where the user has to guess a secret
   number. After every guess the program tells the user whether
@@ -8,46 +7,50 @@
 =end
 
 class Game
-	def take_input
-    @number=50
+	attr_accessor:number
+	attr_accessor:try
+	attr_accessor:array
+  
+	def initialize
+	  @number=50
 	  @try=0
 	  @array=Array.new
 		while(1)
 			print("Guess number : ")
 			@guess=gets().to_i
-	  	if(@guess == @number)
-				flag=search(@array,@guess)
-				if(flag == 1)
-					@try+=1
-					@array.push(@guess)
-				end
-				puts("Congratulations your guess is correct")
-				break
-			elsif(@guess < @number)
-				flag=search(@array,@guess)
-				if(flag == 1)
-					@try+=1
-					@array.push(@guess)
-				end
-				puts("Your number is too less plz try again ")
-			elsif(@guess > @number)
-				flag=search(@array,@guess)
-				if(flag == 1)
-					@try+=1
-					@array.push(@guess)
-				end
-				puts("Your number is too large plz try again ")
-			else
-				flag=search(@array,@guess)
-				if(flag == 1)
-					@try+=1
-					@array.push(@guess)
-				end
-				puts("Invalid entry!!! plz enter digit #{@guess}, #{@number}") 
+				if ( @guess == @number )
+					flag=search( @array , @guess )
+					if( flag == 1 )
+						@try += 1
+						@array.push( @guess )
+					end
+					puts("Congratulations your guess is correct")
+					break
+				elsif	(@guess < @number)
+					flag = search( @array , @guess )
+					if(flag == 1)
+						@try+=1
+						@array.push(@guess)
+					end
+					puts("Your number is too less plz try again ")
+				elsif (@guess > @number)
+					flag = search( @array , @guess )
+					if(flag == 1)
+						@try += 1
+						@array.push( @guess )
+					end
+					puts("Your number is too large plz try again ")
+				else
+					flag = search( @array , @guess )
+					if(flag == 1)
+						@try += 1
+						@array.push( @guess )
+					end
+					puts("Invalid entry!!! plz enter digit #{@guess}, #{@number}") 
     	end
 		end		
 	end
-	def search(arr,guess_no)
+	def search( arr , guess_no )
 		for i in arr
 			if(guess_no == i)
 				return 0
@@ -57,14 +60,13 @@ class Game
 	end
 	def show_tries
 		for i in 0...@array.count
-			@try=i+1
+			@try = i + 1
 			puts(" #{@try} try is : #{@array[i]}")
 		end
 	end
 end
 
 game=Game.new
-game.take_input
 game.show_tries
 
 
