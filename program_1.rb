@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+=======
+=begin Write a program that asks the user for a number n and prints the sum of the numbers 1 to n
+=end
+>>>>>>> 15af9c95ee88a6126e90be2bd9f952bcb049e561
 class Sum
 	attr_accessor:number
 
