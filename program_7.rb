@@ -2,6 +2,7 @@
 Write a program that prints the next 20 leap years.
 =end
 class LeapYears
+        attr_accessor:year
 	def initialize
 	  while(1)
 			print("Enter starting leap year (e.g 2016) : ")
