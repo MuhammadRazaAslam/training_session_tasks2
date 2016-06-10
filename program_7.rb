@@ -2,11 +2,11 @@
 Write a program that prints the next 20 leap years.
 =end
 class LeapYears
-	def take_input
+	def initialize
 	  while(1)
 			print("Enter starting leap year (e.g 2016) : ")
 			@year=gets().to_i
-			if(@year<=0)
+			if( @year <= 0 )
 				puts("!!!!!Invalid Entry!!!!")
 				redo
 			end
@@ -16,18 +16,17 @@ class LeapYears
 	def show	
 		count=0
 		while(1)
-			if(@year%4==0)
-				count+=1
+			if( @year % 4 == 0 )
+				count += 1
 				puts("#{count} = #{@year}")
 			end
-			if(count==20)
+			if(count == 20)
 				break
 			end
-  		@year+=1
+  		@year += 1
 		end	
 	end
 end
 
 lp=LeapYears.new
-lp.take_input
 lp.show
